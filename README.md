@@ -13,23 +13,48 @@ npm install @mgalbis/remark-prefix-links
 
 ## Usage
 
-### Source
+Say we have the following file `example.md`:
+
+```markdown
+[I'm an inline-style link](https://www.example.com)
+[I'm an inline-style link with title](example.com "Example's Homepage")
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
+![I'm a relative reference to an image](static/image.png)
+[You can use numbers for reference-style link definitions][1]
+Or leave it empty and use the [link text itself].
+
+[arbitrary case-insensitive reference text]: static/link
+[1]: static/link
+[link text itself]: static/link
+```
+
+And our module `example.js` looks as follows:
+
 ```js
+const fs = require('fs')
 const html = require("remark-html")
 const remark = require("remark")
 const plugin = require("@mgalbis/remark-prefix-links")
 remark()
-  .use(plugin, { pathPrefix: "test" })
-  .use(html)
-  .process("![Image](static/image.png)", (err, file) => {
-    if (err) throw err
-    console.log(String(file))
-  })
+    .use(plugin, { pathPrefix: "test" })
+    .use(html)
+    .process(fs.readFileSync('example.md'), (err, file) => {
+        if (err) throw err
+        console.log(String(file))
+    })
 ```
 
-### Yields
+Now running `node example.js` yields:
+
 ```html
-<p><img src="test/static/image.png" alt="Image"></p>
+<p>
+  <a href="https://www.example.com">I'm an inline-style link</a>
+  <a href="test/example.com" title="Example&#x27;s Homepage">I'm an inline-style link with title</a>
+  <a href="test/static/link">I'm a reference-style link</a>
+  <img src="test/static/image.png" alt="I'm a relative reference to an image">
+  <a href="test/static/link">You can use numbers for reference-style link definitions</a>
+  Or leave it empty and use the <a href="test/static/link">link text itself</a>.
+</p>
 ```
 
 ## API
