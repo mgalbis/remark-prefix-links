@@ -67,3 +67,10 @@ If you are interested in contributing to this project, please open an issue with
 
 ## License
 [MIT](LICENSE) © [Maria Galbis](https://github.com/mgalbis)
+
+
+
+[build-badge]: https://github.com/mgalbis/remark-prefix-links/workflows/main/badge.svg
+[build]: https://github.com/mgalbis/remark-prefix-links/actions
+[coverage-badge]: https://img.shields.io/codecov/c/github/mgalbis/remark-prefix-links.svg
+[coverage]: https://codecov.io/github/mgalbis/remark-prefix-links
