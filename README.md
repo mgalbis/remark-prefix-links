@@ -1,4 +1,6 @@
 
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
 
 
 # remark-prefix-links
