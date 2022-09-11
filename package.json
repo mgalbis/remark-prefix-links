@@ -1,0 +1,42 @@
+{
+  "name": "@mgalbis/remark-prefix-links",
+  "version": "1.0.0",
+  "description": "Prefix relative paths with a prefix URL.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npx eslint . --ext .js",
+    "lint:fix": "npx eslint . --ext .js --fix",
+    "test:coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run lint && npm run test:coverage"
+  },
+  "dependencies": {
+    "unist-util-visit": "1.4.0"
+  },
+  "homepage": "https://github.com/mgalbis/remark-prefix-links#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgalbis/remark-prefix-links.git"
+  },
+  "keywords": [
+    "remark",
+    "remark-plugin",
+    "markdown",
+    "plugin",
+    "url",
+    "link"
+  ],
+  "author": "Maria Galbis",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.2.1",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1",
+    "tape": "^5.2.2"
+  }
+}
