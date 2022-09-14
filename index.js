@@ -12,6 +12,9 @@ module.exports = (options) => {
     }
 
     const relativeUrl = node.url.replace(/^\//, "");
+    if (relativeUrl.startsWith("#")) {
+      return;
+    }
     try {
       node.url = new URL(relativeUrl, options.pathPrefix);
     } catch (e) {
