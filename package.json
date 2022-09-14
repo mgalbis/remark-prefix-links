@@ -1,6 +1,6 @@
 {
   "name": "@mgalbis/remark-prefix-links",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Prefix relative paths with a prefix URL.",
   "main": "index.js",
   "scripts": {
